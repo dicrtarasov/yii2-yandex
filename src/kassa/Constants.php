@@ -1,4 +1,11 @@
 <?php
+/**
+ * Copyright (c) 2019.
+ *
+ * @author Igor (Dicr) Tarasov, develop@dicr.org
+ */
+
+declare(strict_types = 1);
 namespace dicr\yandex\kassa;
 
 /**
@@ -17,14 +24,19 @@ interface Constants
      * Товары с разным значением tax_system_code необходимо передавать в разных чеках.
      * @link https://kassa.yandex.ru/developers/54fz/parameters-values#tax-systems
      */
-    const TAX_COMMON = 1;
-    const TAX_SIMPLE_1 = 2;
-    const TAX_SIMPLE_2 = 3;
-    const TAX_ENVD = 4;
-    const TAX_ESN = 5;
-    const TAX_PATENT = 6;
+    public const TAX_COMMON = 1;
 
-    const TAXES = [
+    public const TAX_SIMPLE_1 = 2;
+
+    public const TAX_SIMPLE_2 = 3;
+
+    public const TAX_ENVD = 4;
+
+    public const TAX_ESN = 5;
+
+    public const TAX_PATENT = 6;
+
+    public const TAXES = [
         self::TAX_COMMON => 'Общая система налогообложения',
         self::TAX_SIMPLE_1 => 'Упрощенная (УСН, доходы)',
         self::TAX_SIMPLE_2 => 'Упрощенная (УСН, доходы минус расходы)',
@@ -37,14 +49,19 @@ interface Constants
      * @var integer Коды ставок НДС
      * @link https://kassa.yandex.ru/developers/54fz/parameters-values#vat-codes
      */
-    const VAT_NO = 1;
-    const VAT_0 = 2;
-    const VAT_10 = 3;
-    const VAT_20 = 4;
-    const VAT_110 = 5;
-    const VAT_120 = 6;
+    public const VAT_NO = 1;
 
-    const VATS = [
+    public const VAT_0 = 2;
+
+    public const VAT_10 = 3;
+
+    public const VAT_20 = 4;
+
+    public const VAT_110 = 5;
+
+    public const VAT_120 = 6;
+
+    public const VATS = [
         self::VAT_NO => 'Без НДС',
         self::VAT_0 => 'НДС по ставке 0%',
         self::VAT_10 => 'НДС по ставке 10%',
@@ -58,26 +75,43 @@ interface Constants
      * Признак предмета расчета передается в параметре payment_subject.
      * @link https://kassa.yandex.ru/developers/54fz/parameters-values#payment-subject
      */
-    const SUBJECT_COMMODITY = 'commodity';
-    const SUBJECT_EXCISE = 'excise';
-    const SUBJECT_JOB = 'job';
-    const SUBJECT_SERVICE = 'service';
-    const SUBJECT_BET = 'gambling_bet';
-    const SUBJECT_PRIZE = 'gambling_prize';
-    const SUBJECT_LOTTERY = 'lottery';
-    const SUBJECT_LOTTERY_PRIZE = 'lottery_prize';
-    const SUBJECT_INTELLECTUAL = 'intellectual_activity';
-    const SUBJECT_PAYMENT = 'payment';
-    const SUBJECT_AGENT = 'agent_commission';
-    const SUBJECT_PROPERTY = 'property_right';
-    const SUBJECT_GAIN = 'non_operating_gain';
-    const SUBJECT_INSURACE  = 'insurance_premium';
-    const SUBJECT_SALES = 'sales_tax';
-    const SUBJECT_RESORT = 'resort_fee';
-    const SUBJECT_COMPOSITE = 'composite';
-    const SUBJECT_ANOTHER = 'another';
+    public const SUBJECT_COMMODITY = 'commodity';
 
-    const SUBJECTS = [
+    public const SUBJECT_EXCISE = 'excise';
+
+    public const SUBJECT_JOB = 'job';
+
+    public const SUBJECT_SERVICE = 'service';
+
+    public const SUBJECT_BET = 'gambling_bet';
+
+    public const SUBJECT_PRIZE = 'gambling_prize';
+
+    public const SUBJECT_LOTTERY = 'lottery';
+
+    public const SUBJECT_LOTTERY_PRIZE = 'lottery_prize';
+
+    public const SUBJECT_INTELLECTUAL = 'intellectual_activity';
+
+    public const SUBJECT_PAYMENT = 'payment';
+
+    public const SUBJECT_AGENT = 'agent_commission';
+
+    public const SUBJECT_PROPERTY = 'property_right';
+
+    public const SUBJECT_GAIN = 'non_operating_gain';
+
+    public const SUBJECT_INSURACE = 'insurance_premium';
+
+    public const SUBJECT_SALES = 'sales_tax';
+
+    public const SUBJECT_RESORT = 'resort_fee';
+
+    public const SUBJECT_COMPOSITE = 'composite';
+
+    public const SUBJECT_ANOTHER = 'another';
+
+    public const SUBJECTS = [
         self::SUBJECT_COMMODITY => 'Товар',
         self::SUBJECT_EXCISE => 'Подакцизный товар',
         self::SUBJECT_JOB => 'Работа',
@@ -103,12 +137,15 @@ interface Constants
      * Тип расчета передается в запросе на создание чека  в массиве settlements, в параметре type.
      * @link https://kassa.yandex.ru/developers/54fz/parameters-values#settlement-type
      */
-    const SETTLEMENT_CASHLESS = 'cashless';
-    const SETTLEMENT_PREPAYMENT = 'prepayment';
-    const SETTLEMENT_POSTPAYMENT = 'postpayment';
-    const SETTLEMENT_CONSIDERATION = 'consideration';
+    public const SETTLEMENT_CASHLESS = 'cashless';
 
-    const SETTLEMENTS = [
+    public const SETTLEMENT_PREPAYMENT = 'prepayment';
+
+    public const SETTLEMENT_POSTPAYMENT = 'postpayment';
+
+    public const SETTLEMENT_CONSIDERATION = 'consideration';
+
+    public const SETTLEMENTS = [
         self::SETTLEMENT_CASHLESS => 'Безналичный расчет',
         self::SETTLEMENT_PREPAYMENT => 'Предоплата (аванс)',
         self::SETTLEMENT_POSTPAYMENT => 'Постоплата (кредит)',
@@ -119,12 +156,15 @@ interface Constants
      * @var string Статусы платежа.
      * @link https://kassa.yandex.ru/developers/payments/payment-process#lifecycle
      */
-    const STATUS_PENDING = 'pending';
-    const STATUS_WAITING = 'waiting_for_capture';
-    const STATUS_SUCCEEDED = 'succeeded';
-    const STATUS_CANCELED = 'canceled';
+    public const STATUS_PENDING = 'pending';
 
-    const STATUSES = [
+    public const STATUS_WAITING = 'waiting_for_capture';
+
+    public const STATUS_SUCCEEDED = 'succeeded';
+
+    public const STATUS_CANCELED = 'canceled';
+
+    public const STATUSES = [
         self::STATUS_PENDING => 'создан',
         self::STATUS_WAITING => 'ожидает',
         self::STATUS_SUCCEEDED => 'выполнен',
@@ -134,12 +174,15 @@ interface Constants
     /**
      * @var string Тип инициатора платежа илиотмены
      */
-    const REQUESTOR_MERCHANT = 'merchant';
-    const REQUESTOR_APP = 'third_party_client';
-    const REQUESTOR_YANDEX = 'yandex_checkout';
-    const REQUESTOR_NETWORK = 'payment_network';
+    public const REQUESTOR_MERCHANT = 'merchant';
 
-    const REQUESTORS = [
+    public const REQUESTOR_APP = 'third_party_client';
+
+    public const REQUESTOR_YANDEX = 'yandex_checkout';
+
+    public const REQUESTOR_NETWORK = 'payment_network';
+
+    public const REQUESTORS = [
         self::REQUESTOR_MERCHANT => 'Продавец',
         self::REQUESTOR_APP => 'Приложение',
         self::REQUESTOR_YANDEX => 'Яндекс.Касса',
@@ -150,22 +193,35 @@ interface Constants
      * @var string Способы оплаты.
      * @link https://kassa.yandex.ru/developers/payment-methods/overview#all
      */
-    const PAYMETHOD_BANK_CARD = 'bank_card';
-    const PAYMETHOD_APPLE_PAY = 'apple_pay';
-    const PAYMETHOD_GOOGLE_PAY = 'google_pay';
-    const PAYMETHOD_YANDEX_MONEY = 'yandex_money';
-    const PAYMETHOD_QIWI = 'qiwi';
-    const PAYMETHOD_WEBMONEY = 'webmoney';
-    const PAYMETHOD_WECHAT = 'wechat';
-    const PAYMETHOD_SBERBANK = 'sberbank';
-    const PAYMETHOD_ALFABANK = 'alfabank';
-    const PAYMETHOD_TINKOFF_BANK = 'tinkoff_bank';
-    const PAYMETHOD_B2B_SBERBANK = 'b2b_sberbank';
-    const PAYMETHOD_MOBILE_BALANCE = 'mobile_balance';
-    const PAYMETHOD_CASH = 'cash';
-    const PAYMETHOD_INSTALLMENTS = 'installments';
+    public const PAYMETHOD_BANK_CARD = 'bank_card';
 
-    const PAYMETHODS = [
+    public const PAYMETHOD_APPLE_PAY = 'apple_pay';
+
+    public const PAYMETHOD_GOOGLE_PAY = 'google_pay';
+
+    public const PAYMETHOD_YANDEX_MONEY = 'yandex_money';
+
+    public const PAYMETHOD_QIWI = 'qiwi';
+
+    public const PAYMETHOD_WEBMONEY = 'webmoney';
+
+    public const PAYMETHOD_WECHAT = 'wechat';
+
+    public const PAYMETHOD_SBERBANK = 'sberbank';
+
+    public const PAYMETHOD_ALFABANK = 'alfabank';
+
+    public const PAYMETHOD_TINKOFF_BANK = 'tinkoff_bank';
+
+    public const PAYMETHOD_B2B_SBERBANK = 'b2b_sberbank';
+
+    public const PAYMETHOD_MOBILE_BALANCE = 'mobile_balance';
+
+    public const PAYMETHOD_CASH = 'cash';
+
+    public const PAYMETHOD_INSTALLMENTS = 'installments';
+
+    public const PAYMETHODS = [
         self::PAYMETHOD_BANK_CARD => 'Банковская карта',
         self::PAYMETHOD_APPLE_PAY => 'Apple Pay',
         self::PAYMETHOD_GOOGLE_PAY => 'Google Pay',
@@ -186,12 +242,15 @@ interface Constants
      * @var string Сценарии подтверждения платежа.
      * @link https://kassa.yandex.ru/developers/payments/payment-process#user-confirmation
      */
-    const CONFIRM_REDIRECT = 'redirect';
-    const CONFIRM_EXTERNAL = 'external';
-    const CONFIRM_QR_CODE = 'qr-code';
-    const CONFIRM_EMBEDDED = 'embedded';
+    public const CONFIRM_REDIRECT = 'redirect';
 
-    const CONFIRMS = [
+    public const CONFIRM_EXTERNAL = 'external';
+
+    public const CONFIRM_QR_CODE = 'qr-code';
+
+    public const CONFIRM_EMBEDDED = 'embedded';
+
+    public const CONFIRMS = [
         self::CONFIRM_REDIRECT => 'Redirect',
         self::CONFIRM_EXTERNAL => 'External',
         self::CONFIRM_QR_CODE => 'QR-код',
@@ -202,22 +261,35 @@ interface Constants
      * @var string Причины отмены платежа.
      * @link https://kassa.yandex.ru/developers/payments/declined-payments#cancellation-details-reason
      */
-    const REASON_3D = '3d_secure_failed';
-    const REASON_ISSUER = 'call_issuer';
-    const REASON_EXPIRED = 'card_expired';
-    const REASON_COUNTRY = 'country_forbidden';
-    const REASON_FRAUD = 'fraud_suspected';
-    const REASON_GENERAL = 'general_decline';
-    const REASON_IDENTIFICATION = 'identification_required';
-    const REASON_INSUFFICIENT = 'insufficient_funds';
-    const REASON_NUMBER = 'invalid_card_number';
-    const REASON_CSC = 'invalid_csc';
-    const REASON_UNAVAILABLE = 'issuer_unavailable';
-    const REASON_LIMIT = 'payment_method_limit_exceeded';
-    const REASON_RESTRICTED = 'payment_method_restricted';
-    const REASON_REVOKED = 'permission_revoked';
+    public const REASON_3D = '3d_secure_failed';
 
-    const REASONS = [
+    public const REASON_ISSUER = 'call_issuer';
+
+    public const REASON_EXPIRED = 'card_expired';
+
+    public const REASON_COUNTRY = 'country_forbidden';
+
+    public const REASON_FRAUD = 'fraud_suspected';
+
+    public const REASON_GENERAL = 'general_decline';
+
+    public const REASON_IDENTIFICATION = 'identification_required';
+
+    public const REASON_INSUFFICIENT = 'insufficient_funds';
+
+    public const REASON_NUMBER = 'invalid_card_number';
+
+    public const REASON_CSC = 'invalid_csc';
+
+    public const REASON_UNAVAILABLE = 'issuer_unavailable';
+
+    public const REASON_LIMIT = 'payment_method_limit_exceeded';
+
+    public const REASON_RESTRICTED = 'payment_method_restricted';
+
+    public const REASON_REVOKED = 'permission_revoked';
+
+    public const REASONS = [
         self::REASON_3D => 'Не пройдена аутентификация по 3-D Secure',
         self::REASON_ISSUER => 'Оплата данным платежным средством отклонена по неизвестным причинам',
         self::REASON_EXPIRED => 'Истек срок действия банковской карты',
